@@ -7,6 +7,7 @@ const NewExpense = (props) => {
             ...enteredExpenseData,
             id: Math.round(Math.random() * 10),
         };
+        console.log(expenseData);
         props.onAddExpense(expenseData);
     };
     return (
