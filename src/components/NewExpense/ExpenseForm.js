@@ -21,13 +21,18 @@ const ExpenseForm = (props) => {
         event.preventDefault();
         const expenseData = {
             title: enteredTitle,
-            amount: enteredAmount,
+            amount: +enteredAmount,
             date: new Date(enteredDate),
         };
         setEnteredTitle("");
         setEnteredAmount("");
         setEnteredDate("");
         props.onSaveExpenseData(expenseData);
+    };
+
+    const formCancelHandler = (event) => {
+        event.preventDefault();
+        props.onCancelForm();
     };
     return (
         <form onSubmit={formSubmitHandler}>
@@ -56,7 +61,8 @@ const ExpenseForm = (props) => {
                     <label>Date</label>
                     <input
                         type="date"
-                        min="2022-07-01"
+                        min="2019-01-01"
+                        max="2022-12-31"
                         value={enteredDate}
                         onChange={dateChangeHandler}
                         required
@@ -64,6 +70,9 @@ const ExpenseForm = (props) => {
                 </div>
             </div>
             <div className="new-expense__actions">
+                <button type="button" onClick={formCancelHandler}>
+                    Cancel
+                </button>
                 <button type="submit">Add Expense</button>
             </div>
         </form>
