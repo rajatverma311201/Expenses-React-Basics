@@ -43,7 +43,7 @@ function App() {
             <div className="heading" >
                 Basic Project Built While Learning React
                 <a href="https://github.com/rajatverma311201/Expenses-React-Basics">
-                    <img src="github-icon.svg" />
+                    <img src="github-icon.svg" alt="Github logo"/>
                 </a>
             </div>
             <NewExpense onAddExpense={addExpenseHandler} />
