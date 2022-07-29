@@ -1,8 +1,10 @@
 import React from "react";
 import Expenses from "./components/Expense/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import "./App.css";
+import "./../public/github-icon.svg";
 
 const EXPENSES = [
     {
@@ -39,6 +41,12 @@ function App() {
     };
     return (
         <div>
+            <div className="heading" >
+                Basic Project Built While Learning React
+                <a href="https://github.com/rajatverma311201/Expenses-React-Basics">
+                    <img src="github-icon.svg" />
+                </a>
+            </div>
             <NewExpense onAddExpense={addExpenseHandler} />
             <Expenses expenses={expenses} />
         </div>
